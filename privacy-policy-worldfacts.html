@@ -42,17 +42,26 @@
 </ul>
 <p>Leaderboard data is publicly visible to other users of the App.</p>
 
-<h3>Advertising Data</h3>
-<p>For users of the free version, we use Google AdMob to display rewarded video advertisements. Google AdMob may collect:</p>
+<h3>Subscriptions (WorldFacts Plus)</h3>
+<p>WorldFacts Plus subscriptions are purchased through Google Play and managed with RevenueCat. RevenueCat receives an anonymous app user identifier and your subscription status and purchase history. Payments are processed by Google Play: we never receive your payment card details.</p>
+
+<h3>Crash and Error Reports</h3>
+<p>To detect and fix problems, the App sends crash and error reports to Sentry. A report may include:</p>
 <ul>
-  <li>Device identifiers</li>
-  <li>IP address</li>
-  <li>General location data</li>
+  <li>Device model, operating system version, language and time zone</li>
+  <li>App version and technical state of the device at the time of the error (e.g. available memory, battery level, network type)</li>
+  <li>A random identifier of the app installation</li>
+  <li>A log of the actions in the App that led to the error</li>
+  <li>Approximate country, derived from the IP address (the IP address itself is not stored)</li>
 </ul>
-<p>This data is collected and processed by Google according to <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. We request non-personalized ads only.</p>
+<p>Reports do not include your name, email address, or Google account. They are stored in Sentry's EU data region (Germany).</p>
+
+<h3>Country Data and Images</h3>
+<p>The App downloads country data files and loads flag, coat-of-arms, and Wikipedia content from third-party servers (see <a href="#third-party-services">Third-Party Services</a>). Like any web request, these servers receive your IP address. No account information is sent to them.</p>
 
 <h3>Data We Do NOT Collect</h3>
 <ul>
+  <li>The App does not show advertisements and does not use your advertising ID for advertising or tracking</li>
   <li>We do not collect precise location data</li>
   <li>We do not access your contacts, photos, or other device data</li>
   <li>We do not sell any personal information to third parties</li>
@@ -62,24 +71,29 @@
 <ul>
   <li>To authenticate your account and personalize your experience</li>
   <li>To display your quiz scores on the leaderboard</li>
-  <li>To show rewarded video advertisements (free users only)</li>
+  <li>To manage WorldFacts Plus subscriptions</li>
+  <li>To detect and fix crashes and errors</li>
   <li>To improve the App experience</li>
 </ul>
+<p>Quiz reminders and achievement notifications, if enabled, are generated locally on your device: no data is sent for them.</p>
 
 <h2>Data Storage</h2>
 <ul>
-  <li><strong>Local data:</strong> App settings, quiz history, and session tokens are stored on your device using AsyncStorage and SecureStore. This data is deleted when you log out or uninstall the App.</li>
+  <li><strong>Local data:</strong> App settings, quiz history, downloaded country data, and session tokens are stored on your device using AsyncStorage and SecureStore. This data is deleted when you log out or uninstall the App.</li>
   <li><strong>Cloud data:</strong> Leaderboard entries are stored in Firebase Firestore (Google Cloud, europe-west1 region).</li>
 </ul>
 
-<h2>Third-Party Services</h2>
+<h2 id="third-party-services">Third-Party Services</h2>
 <table>
   <tr><th>Service</th><th>Provider</th><th>Purpose</th></tr>
   <tr><td>Google Sign-In</td><td>Google</td><td>Authentication</td></tr>
+  <tr><td>Google Play Billing</td><td>Google</td><td>Subscription payments</td></tr>
   <tr><td>Firebase Firestore</td><td>Google</td><td>Leaderboard storage</td></tr>
-  <tr><td>Google AdMob</td><td>Google</td><td>Rewarded video ads</td></tr>
-  <tr><td>REST Countries API</td><td>restcountries.com</td><td>Country data</td></tr>
   <tr><td>RevenueCat</td><td>RevenueCat Inc.</td><td>Subscription management</td></tr>
+  <tr><td>Sentry</td><td>Functional Software Inc.</td><td>Crash and error reporting</td></tr>
+  <tr><td>Country data files</td><td>jsDelivr / GitHub</td><td>Download of country data (derived from REST Countries, MPL-2.0)</td></tr>
+  <tr><td>Flag and coat-of-arms images</td><td>flagcdn.com, Wikimedia Commons, mainfacts.com</td><td>Country images</td></tr>
+  <tr><td>Wikipedia API</td><td>Wikimedia Foundation</td><td>Country information</td></tr>
 </table>
 <p>Each service has its own privacy policy governing the data they collect.</p>
 
@@ -87,6 +101,7 @@
 <ul>
   <li>Local data is retained until you log out or uninstall the App</li>
   <li>Leaderboard data is retained to maintain the global leaderboard</li>
+  <li>Crash and error reports are kept by Sentry for a limited period and then deleted automatically</li>
   <li>You can request deletion of your leaderboard data by contacting us at <a href="mailto:plexoid.labs@gmail.com">plexoid.labs@gmail.com</a></li>
 </ul>
 
@@ -98,7 +113,7 @@
 <ul>
   <li>Access the data we store about you</li>
   <li>Request deletion of your data</li>
-  <li>Opt out of personalized advertising (we already use non-personalized ads)</li>
+  <li>Delete all local data at any time by logging out or uninstalling the App</li>
 </ul>
 <p>To exercise these rights, contact us at <a href="mailto:plexoid.labs@gmail.com">plexoid.labs@gmail.com</a>.</p>
 
