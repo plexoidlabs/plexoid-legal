@@ -33,6 +33,7 @@
   <li>Profile photo URL</li>
 </ul>
 <p>This information is stored locally on your device using secure storage and is used to personalize your experience.</p>
+<p>To protect the leaderboard, the App also signs you in to <strong>Firebase Authentication</strong> (Google) with the same Google account. Firebase Authentication stores your Google account ID, display name, email address and profile photo URL, so that only you can post scores under your name.</p>
 
 <h3>Quiz and Leaderboard Data</h3>
 <p>When you play quizzes, we store:</p>
@@ -94,10 +95,10 @@
 </ul>
 <p>Quiz reminders and achievement notifications, if enabled, are generated locally on your device: no data is sent for them.</p>
 
-<h2>Data Storage</h2>
+<h2 id="data-storage">Data Storage</h2>
 <ul>
-  <li><strong>Local data:</strong> App settings, quiz history, downloaded country data, and session tokens are stored on your device using AsyncStorage and SecureStore. This data is deleted when you log out or uninstall the App.</li>
-  <li><strong>Cloud data:</strong> Leaderboard entries are stored in Firebase Firestore (Google Cloud, europe-west1 region).</li>
+  <li><strong>Local data:</strong> App settings, quiz history and statistics, downloaded country data, and session tokens are stored on your device using AsyncStorage and SecureStore. Session tokens, account information, quiz history and statistics are deleted when you log out. App settings (language, theme, notifications, ad choice), daily usage counters and downloaded country data stay on the device until you uninstall the App.</li>
+  <li><strong>Cloud data:</strong> Leaderboard entries are stored in Firebase Firestore (Google Cloud, europe-west1 region). Your Firebase Authentication account is stored by Google Firebase.</li>
 </ul>
 
 <h2 id="third-party-services">Third-Party Services</h2>
@@ -106,6 +107,7 @@
   <tr><td>Google Sign-In</td><td>Google</td><td>Authentication</td></tr>
   <tr><td>Google Play Billing</td><td>Google</td><td>Subscription payments</td></tr>
   <tr><td>Firebase Firestore</td><td>Google</td><td>Leaderboard storage</td></tr>
+  <tr><td>Firebase Authentication</td><td>Google</td><td>Leaderboard protection (only you can post your scores)</td></tr>
   <tr><td>RevenueCat</td><td>RevenueCat Inc.</td><td>Subscription management</td></tr>
   <tr><td>Unity LevelPlay</td><td>Unity Technologies</td><td>Advertising (free version only)</td></tr>
   <tr><td>Sentry</td><td>Functional Software Inc.</td><td>Crash and error reporting</td></tr>
@@ -117,12 +119,23 @@
 
 <h2>Data Retention</h2>
 <ul>
-  <li>Local data is retained until you log out or uninstall the App</li>
-  <li>Leaderboard data is retained to maintain the global leaderboard</li>
+  <li>Local data is retained as described in <a href="#data-storage">Data Storage</a></li>
+  <li>Leaderboard data and the Firebase Authentication account are retained to maintain the global leaderboard</li>
   <li>Crash and error reports are kept by Sentry for a limited period and then deleted automatically</li>
   <li>Advertising data is kept by Unity according to its own privacy policy</li>
-  <li>You can request deletion of your leaderboard data by contacting us at <a href="mailto:plexoid.labs@gmail.com">plexoid.labs@gmail.com</a></li>
+  <li>You can delete your account and data at any time (see <a href="#delete-account">Deleting Your Account</a>)</li>
 </ul>
+
+<h2 id="delete-account">Deleting Your Account</h2>
+<p><strong>In the App:</strong> open <strong>Settings → Delete account</strong> and confirm. The App deletes:</p>
+<ul>
+  <li>all your scores on the leaderboard</li>
+  <li>your Firebase Authentication account</li>
+  <li>the link between WorldFacts and your Google account</li>
+  <li>your account data, quiz history and statistics on the device</li>
+</ul>
+<p>App settings and daily usage counters stay on the device until you uninstall the App. A WorldFacts Plus subscription is <strong>not</strong> cancelled automatically: cancel it in the Google Play Store (Profile → Payments &amp; subscriptions → Subscriptions). Crash reports (Sentry) and advertising data (Unity) do not contain your account and are deleted by those services according to their own retention periods.</p>
+<p><strong>Without the App:</strong> send an email to <a href="mailto:plexoid.labs@gmail.com?subject=Delete%20my%20WorldFacts%20account">plexoid.labs@gmail.com</a> from the address of your Google account, with the subject "Delete my WorldFacts account". We delete your leaderboard scores and your account within 30 days and confirm by email.</p>
 
 <h2>Children's Privacy</h2>
 <p>WorldFacts is not directed at children under the age of 13, and ads are never shown to users who declare they are under 16. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us with personal information, please contact us.</p>
@@ -131,8 +144,8 @@
 <p>You have the right to:</p>
 <ul>
   <li>Access the data we store about you</li>
-  <li>Request deletion of your data</li>
-  <li>Delete all local data at any time by logging out or uninstalling the App</li>
+  <li>Delete your account and data (see <a href="#delete-account">Deleting Your Account</a>)</li>
+  <li>Delete your account data and quiz history from the device by logging out, or all local data by uninstalling the App</li>
   <li>Change or withdraw your ad consent at any time in Settings → Privacy &amp; ads</li>
 </ul>
 <p>To exercise these rights, contact us at <a href="mailto:plexoid.labs@gmail.com">plexoid.labs@gmail.com</a>.</p>
