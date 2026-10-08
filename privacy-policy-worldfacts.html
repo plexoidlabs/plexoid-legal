@@ -18,14 +18,18 @@
 <body>
 
 <h1>Privacy Policy – WorldFacts</h1>
-<p class="meta"><strong>Last updated:</strong> September 2026 &nbsp;|&nbsp; <strong>Contact:</strong> <a href="mailto:plexoid.labs@gmail.com">plexoid.labs@gmail.com</a></p>
+<p class="meta"><strong>Last updated:</strong> October 2026 &nbsp;|&nbsp; <strong>Contact:</strong> <a href="mailto:plexoid.labs@gmail.com">plexoid.labs@gmail.com</a></p>
 
 <h2>Overview</h2>
 <p>WorldFacts ("the App") is a mobile application that allows users to explore countries, learn facts, and test their knowledge through quizzes. This Privacy Policy explains how we collect, use, and protect your information.</p>
 
 <h2>Information We Collect</h2>
 
-<h3>Account Information (Google Sign-In)</h3>
+<h3 id="without-account">Using the App Without an Account</h3>
+<p>Signing in is optional. If you choose <strong>Continue without an account</strong>, the App does not receive your name, email address or Google account, and you have no Firebase Authentication account. Your quiz history, statistics, settings and daily usage counters (for example, which countries you opened today) stay on your device only, and your scores are not sent to the leaderboard. If you sign in later, your quiz history and statistics are kept.</p>
+<p>Crash reports and advertising work for guests as described below. Subscribing to WorldFacts Plus requires signing in.</p>
+
+<h3>Account Information (Google Sign-In, optional)</h3>
 <p>When you sign in with Google, we receive:</p>
 <ul>
   <li>Display name</li>
@@ -97,7 +101,7 @@
 
 <h2 id="data-storage">Data Storage</h2>
 <ul>
-  <li><strong>Local data:</strong> App settings, quiz history and statistics, downloaded country data, and session tokens are stored on your device using AsyncStorage and SecureStore. Session tokens, account information, quiz history and statistics are deleted when you log out. App settings (language, theme, notifications, ad choice), daily usage counters and downloaded country data stay on the device until you uninstall the App.</li>
+  <li><strong>Local data:</strong> App settings, quiz history and statistics, downloaded country data, and session tokens are stored on your device using AsyncStorage and SecureStore. Session tokens, account information, quiz history and statistics are deleted when you log out. Guests have no session: their quiz history and statistics stay on the device until they uninstall the App. App settings (language, theme, notifications, ad choice), daily usage counters and downloaded country data stay on the device until you uninstall the App.</li>
   <li><strong>Cloud data:</strong> Leaderboard entries are stored in Firebase Firestore (Google Cloud, europe-west1 region). Your Firebase Authentication account is stored by Google Firebase.</li>
 </ul>
 
